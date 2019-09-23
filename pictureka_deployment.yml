@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  generation: 1
+  labels:
+    run: pictureka
+  name: pictureka
+  namespace: default
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  selector:
+    matchLabels:
+      run: pictureka
+  template:
+    metadata:
+      labels:
+        run: pictureka
+    spec:
+      containers:
+      - image: krudisar/pictureka
+        imagePullPolicy: Always
+        name: pictureka
+        ports:
+        - containerPort: 5000
+          protocol: TCP
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      terminationGracePeriodSeconds: 30
