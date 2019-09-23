@@ -16,7 +16,3 @@ spec:
     run: pictureka
   sessionAffinity: None
   type: NodePort
-#status:
-#  loadBalancer:
-#    ingress:
-#    - hostname: localhost
