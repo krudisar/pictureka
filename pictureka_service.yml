@@ -15,4 +15,5 @@ spec:
   selector:
     run: pictureka
   sessionAffinity: None
-  type: NodePort
+  type: LoadBalancer
+  
